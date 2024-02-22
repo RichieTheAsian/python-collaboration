@@ -46,3 +46,38 @@ class ToDoList:
             print(f"Task '{removed_task.name}' deleted.")
         else:
             print("Invalid task number.")
+
+def main():
+    todo_list = ToDoList()
+
+    while True:
+        print("\n--- To-Do List Menu ---")
+        print("1. Add a new task")
+        print("2. View all tasks")
+        print("3. Mark a task as completed")
+        print("4. Delete a task")
+        print("5. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            task_name = input("Enter the name of the task: ")
+            todo_list.add_task(task_name)
+
+        elif choice == '2':
+            todo_list.view_tasks()
+
+        elif choice == '3':
+            task_number = int(input("Enter the number of the task to mark as completed: "))
+            todo_list.mark_completed(task_number)
+
+        elif choice == '4':
+            task_number = int(input("Enter the number of the task to delete: "))
+            todo_list.delete_task(task_number)
+
+        elif choice == '5':
+            print("Exiting To-Do List App.")
+            break
+
+        else:
+            print("Invalid choice, please try again.")
