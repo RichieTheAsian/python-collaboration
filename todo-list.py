@@ -25,3 +25,12 @@ class ToDoList:
     def add_task(self, name):
         self.tasks.append(Task(name))
         print(f"Task '{name}' added.")
+        
+        
+    
+    def mark_completed(self, task_number):
+        if 0 < task_number <= len(self.tasks):
+            self.tasks[task_number - 1].mark_completed()
+            print(f"Task '{self.tasks[task_number - 1].name}' marked as completed.")
+        else:
+            print("Invalid task number.")
