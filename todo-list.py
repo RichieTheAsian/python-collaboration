@@ -26,7 +26,12 @@ class ToDoList:
         self.tasks.append(Task(name))
         print(f"Task '{name}' added.")
         
-        
+    def view_tasks(self):
+        if not self.tasks:
+            print("No tasks to show.")
+            return
+        for i, task in enumerate(self.tasks, start=1):
+            print(f"{i}. {task}")
     
     def mark_completed(self, task_number):
         if 0 < task_number <= len(self.tasks):
