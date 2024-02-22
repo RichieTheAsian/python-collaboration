@@ -18,4 +18,10 @@ class Task:
         return f"{self.name} - {'Completed' if self.is_completed else 'Pending'}"
 
 
+class ToDoList:
+    def __init__(self):
+        self.tasks = []
 
+    def add_task(self, name):
+        self.tasks.append(Task(name))
+        print(f"Task '{name}' added.")
