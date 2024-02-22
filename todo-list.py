@@ -39,3 +39,10 @@ class ToDoList:
             print(f"Task '{self.tasks[task_number - 1].name}' marked as completed.")
         else:
             print("Invalid task number.")
+
+    def delete_task(self, task_number):
+        if 0 < task_number <= len(self.tasks):
+            removed_task = self.tasks.pop(task_number - 1)
+            print(f"Task '{removed_task.name}' deleted.")
+        else:
+            print("Invalid task number.")
